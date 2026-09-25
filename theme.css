@@ -2,16 +2,16 @@
   --default-interface-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --default-text-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --default-mono-font: 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
-  --radius-sm: 5px;
-  --radius: 7px;
-  --radius-lg: 11px;
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 20px;
   --rail-bg: color-mix(in srgb, var(--container-color) 94%, var(--accent-color));
   --rail-icon: var(--text-secondary);
   --rail-hover-bg: var(--hover-bg);
   --rail-active-bg: var(--accent-tint-bg);
   --rail-active-icon: var(--accent-color);
   --rail-border: var(--border-light);
-  --rail-radius: 6px;
+  --rail-radius: 12px;
   --rail-gap: 4px;
   --sidebar-bg: var(--container-color);
   --sidebar-header-bg: var(--sidebar-bg);
@@ -31,10 +31,10 @@
   --tab-bar-bg: var(--container-color);
   --tab-bg: transparent;
   --tab-hover-bg: var(--hover-bg);
-  --tab-active-bg: var(--pane-bg);
+  --tab-active-bg: var(--accent-tint-bg);
   --tab-text: var(--text-secondary);
   --tab-hover-text: var(--title-color);
-  --tab-active-text: var(--title-color);
+  --tab-active-text: var(--accent-tint-text);
   --tab-border: var(--border-light);
   --tab-active-border: var(--accent-color);
   --tab-outline-width: 0px;
@@ -45,7 +45,7 @@
   --markdown-text: var(--text-color);
   --markdown-font: var(--body-font);
   --markdown-size: var(--text-font-size);
-  --markdown-line-height: 1.7;
+  --markdown-line-height: 1.8;
   --markdown-paragraph-spacing: 1.05em;
   --markdown-heading-font: var(--body-font);
   --markdown-heading-spacing: 1.55em;
@@ -98,9 +98,9 @@
   --launcher-icon: var(--rail-icon);
   --launcher-hover-bg: var(--rail-hover-bg);
   --launcher-active-bg: var(--rail-active-bg);
-  --custom-tab-corner-top: 7px;
-  --custom-tab-corner-fillet: 4px;
-  --custom-tab-corner-chip: 6px;
+  --custom-tab-corner-top: 12px;
+  --custom-tab-corner-fillet: 7px;
+  --custom-tab-corner-chip: 10px;
   --statusbar-hover-bg: var(--hover-bg);
   --statusbar-hover-text: var(--title-color);
   --statusbar-gap: 8px;
@@ -108,7 +108,7 @@
   --control-text: var(--title-color);
   --control-border: var(--border-medium);
   --control-focus: var(--accent-color);
-  --control-radius: var(--radius-sm);
+  --control-radius: 10px;
   --menu-bg: var(--container-color);
   --menu-text: var(--text-color);
   --menu-border: var(--border-medium);
@@ -122,8 +122,8 @@
   --focus-ring-color: var(--accent-color);
   --markdown-mono-font: var(--mono-font);
   --markdown-mono-size: calc(var(--markdown-size) * 0.9);
-  --markdown-reading-width: 720px;
-  --markdown-page-padding: 24px;
+  --markdown-reading-width: 750px;
+  --markdown-page-padding: 30px;
   --markdown-title-size: 2em;
   --markdown-title-weight: 600;
   --markdown-title-color: var(--title-color);
@@ -138,7 +138,7 @@
   --markdown-completed-text: var(--text-secondary);
   --markdown-list-spacing: .12em;
   --markdown-quote-padding: 12px;
-  --markdown-quote-radius: 0px;
+  --markdown-quote-radius: 14px;
   --markdown-callout-text: var(--text-color);
   --markdown-callout-bg: var(--accent-soft-bg);
   --markdown-callout-border: transparent;
@@ -154,12 +154,12 @@
   --markdown-callout-question: var(--accent-color);
   --markdown-callout-example: var(--syntax-function);
   --markdown-callout-padding: 14px;
-  --markdown-callout-radius: var(--radius);
+  --markdown-callout-radius: 14px;
   --markdown-inline-code-border: transparent;
   --markdown-inline-code-padding: 4px;
   --markdown-inline-code-radius: var(--radius-sm);
   --markdown-code-padding: 14px;
-  --markdown-code-radius: var(--radius);
+  --markdown-code-radius: 12px;
   --markdown-table-text: var(--text-color);
   --markdown-table-padding: 10px;
   --markdown-divider: var(--border-medium);
@@ -184,31 +184,40 @@
   --markdown-h4-spacing: var(--markdown-heading-spacing);
   --markdown-h5-spacing: var(--markdown-heading-spacing);
   --markdown-h6-spacing: var(--markdown-heading-spacing);
+  --shadow-menu: 0 12px 36px rgba(20, 35, 60, .18);
+  --switch-track-off: color-mix(in srgb, var(--accent-color) 30%, var(--container-color));
+  --switch-track-on: var(--accent-color);
+  --switch-track-radius: 10px;
+  --switch-track-shadow: inset 0 1px 3px color-mix(in srgb, var(--title-color) 14%, transparent);
+  --switch-thumb-bg: var(--pane-bg);
+  --switch-thumb-radius: 8px;
+  --switch-thumb-shadow: 0 1px 3px color-mix(in srgb, var(--title-color) 25%, transparent), inset 0 1px 0 color-mix(in srgb, var(--pane-bg) 70%, white);
+  --switch-thumb-decoration: linear-gradient(135deg, color-mix(in srgb, var(--accent-color) 20%, transparent), transparent 65%);
 }
 
 :root:where([data-design-theme='nord'][data-theme='dark']) {
-  --container-color-alt: #2e3440;
-  --pane-bg: #2e3440;
-  --container-color: #343c4a;
-  --surface-color: #343c4a;
-  --surface-color-alt: #2e3440;
-  --body-color: #3b4555;
-  --container-color-light: #3b4555;
+  --container-color-alt: #253242;
+  --pane-bg: #253242;
+  --container-color: #2d3d50;
+  --surface-color: #2d3d50;
+  --surface-color-alt: #253242;
+  --body-color: #354b60;
+  --container-color-light: #354b60;
   --container-color-alt-transparent: color-mix(in srgb, #2e3440 88%, transparent);
-  --title-color: #eceff4;
-  --text-color: #d8dee9;
-  --text-secondary: #a7b4c8;
-  --text-tertiary: #8290a5;
+  --title-color: #eef5fc;
+  --text-color: #d7e5f1;
+  --text-secondary: #a9bfd2;
+  --text-tertiary: #a9bfd2;
   --textColorRGBA: color-mix(in srgb, #d8dee9 40%, transparent);
-  --border-light: color-mix(in srgb, #eceff4 10%, transparent);
-  --border-medium: color-mix(in srgb, #eceff4 19%, transparent);
-  --hover-bg: color-mix(in srgb, #eceff4 7%, transparent);
-  --accent-color: #88c0d0;
-  --accent-contrast: #25323d;
+  --border-light: color-mix(in srgb, #eef5fc 12%, transparent);
+  --border-medium: color-mix(in srgb, #eef5fc 22%, transparent);
+  --hover-bg: color-mix(in srgb, #92d3e3 9%, transparent);
+  --accent-color: #92d3e3;
+  --accent-contrast: #203141;
   --selection-color: 136, 192, 208;
-  --accent-tint-bg: color-mix(in srgb, #88c0d0 17%, transparent);
-  --accent-tint-text: #9eccd9;
-  --accent-soft-bg: color-mix(in srgb, #88c0d0 6%, transparent);
+  --accent-tint-bg: color-mix(in srgb, #92d3e3 15%, transparent);
+  --accent-tint-text: #92d3e3;
+  --accent-soft-bg: color-mix(in srgb, #92d3e3 6%, transparent);
   --dropzone-bg: color-mix(in srgb, #88c0d0 14%, transparent);
   --info-color: #88c0d0;
   --info-color-bg: color-mix(in srgb, #88c0d0 12%, transparent);
@@ -225,28 +234,28 @@
 }
 
 :root:where([data-design-theme='nord'][data-theme='light']) {
-  --container-color-alt: #f3f6fa;
-  --pane-bg: #f3f6fa;
-  --container-color: #e5ebf3;
-  --surface-color: #e5ebf3;
-  --surface-color-alt: #f3f6fa;
-  --body-color: #dce4ee;
-  --container-color-light: #dce4ee;
+  --container-color-alt: #f5f8fc;
+  --pane-bg: #f5f8fc;
+  --container-color: #e5edf6;
+  --surface-color: #e5edf6;
+  --surface-color-alt: #f5f8fc;
+  --body-color: #d2dfed;
+  --container-color-light: #d2dfed;
   --container-color-alt-transparent: color-mix(in srgb, #f3f6fa 88%, transparent);
-  --title-color: #2e3440;
-  --text-color: #465365;
-  --text-secondary: #56667c;
-  --text-tertiary: #65768d;
+  --title-color: #293f54;
+  --text-color: #354d63;
+  --text-secondary: #60778e;
+  --text-tertiary: #60778e;
   --textColorRGBA: color-mix(in srgb, #465365 40%, transparent);
-  --border-light: color-mix(in srgb, #2e3440 9%, transparent);
-  --border-medium: color-mix(in srgb, #2e3440 17%, transparent);
-  --hover-bg: color-mix(in srgb, #2e3440 7%, transparent);
-  --accent-color: #3e6f85;
+  --border-light: color-mix(in srgb, #293f54 12%, transparent);
+  --border-medium: color-mix(in srgb, #293f54 22%, transparent);
+  --hover-bg: color-mix(in srgb, #346b87 9%, transparent);
+  --accent-color: #346b87;
   --accent-contrast: #ffffff;
   --selection-color: 62, 111, 133;
-  --accent-tint-bg: color-mix(in srgb, #3e6f85 11%, transparent);
-  --accent-tint-text: #396579;
-  --accent-soft-bg: color-mix(in srgb, #3e6f85 6%, transparent);
+  --accent-tint-bg: color-mix(in srgb, #346b87 15%, transparent);
+  --accent-tint-text: #346b87;
+  --accent-soft-bg: color-mix(in srgb, #346b87 6%, transparent);
   --dropzone-bg: color-mix(in srgb, #3e6f85 14%, transparent);
   --info-color: #3e6f85;
   --info-color-bg: color-mix(in srgb, #3e6f85 12%, transparent);
@@ -261,3 +270,15 @@
   --syntax-addition: #356445;
   --syntax-deletion: #a42a41;
 }
+
+:where([data-design-theme='nord']) :is(.sidebar, .right-sidebar) { background-image: linear-gradient(160deg, color-mix(in srgb, var(--accent-color) 8%, transparent), transparent 55%); }
+
+:where([data-design-theme='nord']) .panel-title { text-transform: none; letter-spacing: .035em; }
+
+:where([data-design-theme='nord']) .tab.active { box-shadow: inset 0 2px 5px color-mix(in srgb, var(--title-color) 9%, transparent), inset 0 0 0 1px color-mix(in srgb, var(--accent-color) 20%, transparent), inset var(--tab-outline-width) 0 0 var(--tab-active-border), inset calc(-1 * var(--tab-outline-width)) 0 0 var(--tab-active-border), inset 0 var(--tab-outline-width) 0 var(--tab-active-border); }
+
+:where([data-design-theme='nord']) .icon-rail-btn.active { box-shadow: inset 0 1px 4px color-mix(in srgb, var(--title-color) 12%, transparent); }
+
+:where([data-design-theme='nord']) :is(.ctx-menu, .ctx-popover, .modal) { background-image: linear-gradient(140deg, var(--accent-soft-bg), transparent 65%); }
+
+:where([data-design-theme='nord']) .status-bar { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--accent-color) 14%, transparent); }
