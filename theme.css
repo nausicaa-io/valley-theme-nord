@@ -1,4 +1,17 @@
 :root:where([data-design-theme='nord']) {
+  --content-text: var(--title-color);
+  --content-muted: color-mix(in srgb, var(--text-secondary) 60%, var(--title-color));
+  --surface-raised: var(--container-color-light);
+  --input-elevated-bg: var(--control-bg);
+  --input-elevated-border: var(--control-border);
+  --input-elevated-placeholder: var(--content-muted);
+  --input-elevated-shadow: none;
+  --hover-bg-strong: color-mix(in srgb, var(--title-color) 14%, var(--container-color));
+  --menu-glass-bg: var(--menu-bg);
+  --menu-glass-border: var(--menu-border);
+  --menu-glass-shadow: var(--shadow-menu);
+  --button-contrast-bg: var(--title-color);
+  --button-contrast-text: var(--pane-bg);
   --default-interface-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --default-text-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --default-mono-font: 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
@@ -244,7 +257,7 @@
   --container-color-alt-transparent: color-mix(in srgb, #f3f6fa 88%, transparent);
   --title-color: #293f54;
   --text-color: #354d63;
-  --text-secondary: #60778e;
+  --text-secondary: #5c738a;
   --text-tertiary: #60778e;
   --textColorRGBA: color-mix(in srgb, #465365 40%, transparent);
   --border-light: color-mix(in srgb, #293f54 12%, transparent);
